@@ -14,12 +14,12 @@ export const useProductStore = defineStore('product', {
       this.loading = true
       try {
         const res = await api.getProducts()
-    
-        // Добавляем category вручную, если его нет
+        // Добавляем категорию вручную
         this.products = res.data.map(product => ({
           ...product,
-          category: product.name.includes('iPhone') ? 'iphone' :
-                   product.name.includes('iPad') ? 'ipad' : 'mac'
+          category: product.name.toLowerCase().includes('iphone') ? 'iphone' :
+                    product.name.toLowerCase().includes('ipad') ? 'ipad' :
+                    product.name.toLowerCase().includes('mac') ? 'mac' : 'other'
         }))
       } catch (err) {
         this.error = err.message

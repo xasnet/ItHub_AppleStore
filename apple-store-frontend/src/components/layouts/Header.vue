@@ -4,6 +4,9 @@
     <h1>Apple Store</h1>
     <nav>
       <router-link to="/">Главная</router-link>
+      <router-link to="/category/iphone">iPhone</router-link>
+      <router-link to="/category/ipad">iPad</router-link>
+      <router-link to="/category/mac">Mac</router-link>
       <router-link to="/cart">Корзина</router-link>
       <router-link to="/favorites">Избранное</router-link>
     </nav>
